@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Countdown Timer Project</title>
+</head>
+<body>
+     <div class="header">
+        <nav>
+            <label class="logo">ANICON</label>
+            <ul class="nav-links">
+                <li><a href="#">Contact Info</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Merchandise</a></li>
+    
+            </ul>
+          </nav>
+     
+          <div class="container">
+               <h2>Welcome to  the Anime Convention</h2>
+               <p>Come and have fun with your fellow anime fans</p>
+               <div class="row">
+                <div class="col-1">
+                   <img src="project/KNSB1.png" alt="">
+                </div>
+                <div class="col-2">
+                    <h2>WELCOME TO ANICON</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illo corrupti nihil quo asperiores laborum laudantium neque doloribus animi voluptate sunt a, qui explicabo dolores dolorum! Non sequi culpa est illo assumenda sunt quaerat modi aliquam repellat tempora magnam quisquam, minus deleniti possimus praesentium vitae ratione sit dolore ea illum quae cum maxime qui consequuntur! Tempora?</p>
+                    <button class="btn"><a href="">To learn more</a></button>
+
+               </div>
+          </div> 
+          <div class="shape">
+            <div class="cards" id="display"></div>
+          </div>
+        </div>
+     </div>
+</body>
+
+<script>
+    var countDownDate = new Date(" March 8, 2024 00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+       
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("display").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+    clearInterval(x);
+    countDownDate = new Date("March 6,  2024 00:00:00").getTime(); 
+    // Change the date to the new countdown end date
+        }
+}, 1000);
+
+</script>
+
+</html>
